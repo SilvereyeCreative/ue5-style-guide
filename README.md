@@ -1,41 +1,8 @@
-# [Gamemakin](https://gamemak.in) UE4 Style Guide Version 2() {
+# Silvereye Creative UE5 Style Guide() {
 
-# THIS IS A DRAFT
+*A mostly reasonable approach to Unreal Engine 5*
 
-This is a draft of version 2. All work on version 2 of this style guide will be on this branch. Please feel free to commit any form of contribution in the form of a pull request, even if they are just ideas that still need to be solved but at least move the needle forward.
-
-*A mostly reasonable approach to Unreal Engine 4*
-
-Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
-
-[![Analytics](https://ga-beacon.appspot.com/UA-80567399-1/repo?useReferrer)](#)
-
-## Repo Notice
-
-This repo is now located at https://github.com/Allar/ue5-style-guide. The default branch of this repository has been renamed `main`.
-
-## This is currently for UE4. For UE5/v2, see the v2 branch.
-## Linter and Style Guide Documentation
-
-More technical documentation regarding Linter and the Style Guide can be found at our [ReadTheDocs](https://ue4-style-guide.readthedocs.io/en/latest/) page.
-
-## Discuss This Style Guide
-
-Gamemakin LLC has a public Discord channel at http://discord.gamemak.in with a #linter channel if you'd like to discuss all things style guide and Linter plugin.
-
-## Linking To This Document
-
-Every section of this style guide is numbered for both easy reference and easy linking. You can link to any section directly by simply append a hash tag and the section number to the end of http://ue4.style
-For example, if you want to send someone to the first principle of this style guide you would append `#0.1`, resulting in http://ue4.style#0.1.
-
-## Forks And Translations
-
-If you have made a notable fork or translation that is not suitable for a pull request into this repo, please submit a pull request to add the fork or translation here.
-
-* [Korean Translation](https://github.com/ymkim50/ue4-style-guide/blob/master/README_Kor.md) by ymkim50
-* [Russian Translation](https://github.com/CosmoMyzrailGorynych/ue4-style-guide-rus/blob/master/README.md) by CosmoMyzrailGorynych
-* [Japanese Translation](https://github.com/akenatsu/ue4-style-guide/blob/master/README.jp.md) by akenatsu
-* [Chinese Translation](https://github.com/skylens-inc/ue4-style-guide/blob/master/README.md) by Beijing Skylens Tech.
+Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript), and forked from [Gamemakin UE4 style guide](ue4.style).
 
 ## Important Terminology
 
@@ -81,13 +48,11 @@ Usually refers to a variable defined as a function argument or a local variable 
 
 When in the context of a class, it is often used to convey discussion about its definition and what it will hold.
 
-<a name="0"></a>
-## 0. Principles
+## Principles
 
 These principles have been adapted from [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/).
 
-<a name="0.1"></a>
-### 0.1 If your UE4 project already has a style guide, you should follow it.
+### If your UE5 project already has a style guide, you should follow it.
 
 If you are working on a project or with a team that has a pre-existing style guide, it should be respected.  Any inconsistency between an existing style guide and this guide should defer to the existing.
 
@@ -96,15 +61,13 @@ Style guides should be living documents. You should propose style guide changes 
 > #### "Arguments over style are pointless. There should be a style guide, and you should follow it."
 > [_Rebecca Murphey_](https://rmurphey.com)
 
-<a name="0.2"></a>
-### 0.2 All structure, assets, and code in any Unreal Engine 4 project should look like a single person created it, no matter how many people contributed.
+### All structure, assets, and code in any UE5 project should look like a single person created it, no matter how many people contributed.
 
 Moving from one project to another should not cause a re-learning of style and structure. Conforming to a style guide removes unneeded guesswork and ambiguities.
 
 It also allows for more productive creation and maintenance as one does not need to think about style. Simply follow the instructions. This style guide is written with best practices in mind, meaning that by following this style guide you will also minimize hard to track issues.
 
-<a name="0.3"></a>
-### 0.3 Friends do not let friends have bad style.
+### Friends do not let friends have bad style.
 
 If you see someone working either against a style guide or no style guide, try to correct them.
 
@@ -112,13 +75,11 @@ When working within a team or discussing within a community such as [Unreal Slac
 
 If you are helping someone whose work conforms to a different but consistent and sane style guide, you should be able to adapt to it. If they do not conform to any style guide, please direct them here.
 
-<a name="0.4"></a>
-### 0.4 A team without a style guide is no team of mine.
+### A team without a style guide is no team of mine.
 
-When joining an Unreal Engine 4 team, one of your first questions should be "Do you have a style guide?". If the answer is no, you should be skeptical about their ability to work as a team.
+When joining an Unreal Engine 5 team, one of your first questions should be "Do you have a style guide?". If the answer is no, you should be skeptical about their ability to work as a team.
 
-<a name="0.5"></a>
-### 0.5 Don't Break The Law
+### Don't Break The Law
 
 Gamemakin LLC is not a lawyer, but please don't introduce illegal actions and behavior to a project, including but not limited to:
 
@@ -127,13 +88,24 @@ Gamemakin LLC is not a lawyer, but please don't introduce illegal actions and be
 * Don't steal content
 * Follow licensing restrictions on content, e.g. attribute when attributions are needed
 
-<a name="00"></a>
-## 00. Globally Enforced Opinions
+<a name="toc"></a>
+## Table of Contents
 
-@TODO: Make this section 1 and update this document accordingly. Or maybe we don't?
+> 0. [Globally Enforced Options](#geo)
+> 1. [Asset Naming Conventions](#anc)
+> 1. [Directory Structure](#structure)
+> 1. [Blueprints](#bp)
+> 1. [Static Meshes](#s)
+> 1. [Particle Systems](#ps)
+> 1. [Levels / Maps](#levels)
+> 1. [Textures](#textures)
 
-<a name="00.1"></a>
-### 00.1 Forbidden Characters
+<a name="geo"></a>
+<a name="0"></a>
+## 0. Globally Enforced Opinions
+
+<a name="0.1"></a>
+### 0.1 Forbidden Characters
 
 #### Identifiers
 
@@ -153,17 +125,6 @@ Any `Identifier` should strive to only have the following characters when possib
 
 
 The reasoning for this is this will ensure the greatest compatibility of all data across all platforms across all tools, and help prevent downtime due to potentially bad character handling for identifiers in code you don't control.
-
-<a name="toc"></a>
-## Table of Contents
-
-> 1. [Asset Naming Conventions](#anc)
-> 1. [Directory Structure](#structure)
-> 1. [Blueprints](#bp)
-> 1. [Static Meshes](#s)
-> 1. [Particle Systems](#ps)
-> 1. [Levels / Maps](#levels)
-> 1. [Textures](#textures)
 
 <a name="anc"></a>
 <a name="1"></a>
@@ -236,7 +197,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 
 > 1.2.7 [Miscellaneous](#anc-misc)
 
-> 1.2.8 [Paper 2D](#anc-paper2d)
+> 1.2.8 [Lyra Types](#anc-paper2d)
 
 > 1.2.9 [Physics](#anc-physics)
 
@@ -245,118 +206,120 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 > 1.2.11 [User Interface](#anc-ui)
 
 > 1.2.12 [Effects](#anc-effects)
+ 
+> 1.2.13 [Enhanced Input](#anc-input)
 
 <a name="anc-common"></a>
 <a name="1.2.1"></a>
 #### 1.2.1 Most Common
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Level / Map             |            |            | [Should be in a folder called Maps.](#2.4) |
-| Level (Persistent)      |            | _P         |                                  |
-| Level (Audio)           |            | _Audio     |                                  |
-| Level (Lighting)        |            | _Lighting  |                                  |
-| Level (Geometry)        |            | _Geo       |                                  |
-| Level (Gameplay)        |            | _Gameplay  |                                  |
-| Blueprint               | BP_        |            |                                  |
-| Material                | M_         |            |                                  |
-| Static Mesh             | S_         |            | Many use SM_. We use S_.         |
-| Skeletal Mesh           | SK_        |            |                                  |
-| Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
-| Particle System         | PS_        |            |                                  |
-| Widget Blueprint        | WBP_       |            |                                  |
+| Asset Type         | Prefix | Suffix    | Notes                                      |
+|--------------------|--------|-----------|--------------------------------------------|
+| Level / Map        |        |           | [Should be in a folder called Maps.](#2.4) |
+| Level (Persistent) |        | _P        |                                            |
+| Level (Audio)      |        | _Audio    |                                            |
+| Level (Lighting)   |        | _Lighting |                                            |
+| Level (Geometry)   |        | _Geo      |                                            |
+| Level (Gameplay)   |        | _Gameplay |                                            |
+| Blueprint          | BP_    |           |                                            |
+| Material           | M_     |           |                                            |
+| Static Mesh        | SM_    |           |                                            |
+| Skeletal Mesh      | SK_    |           |                                            |
+| Texture            | T_     | _?        | See [Textures](#anc-textures)              |
+| Particle System    | PS_    |           |                                            |
+| Widget Blueprint   | WBP_   |           |                                            |
 
 <a name="anc-animations"></a>
 <a name="1.2.2"></a>
 #### 1.2.2 Animations
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Aim Offset              | AO_        |            |                                  |
-| Aim Offset 1D           | AO_        |            |                                  |
-| Animation Blueprint     | ABP_       |            |                                  |
-| Animation Composite     | AC_        |            |                                  |
-| Animation Montage       | AM_        |            |                                  |
-| Animation Sequence      | A_         |            |                                  |
-| Blend Space             | BS_        |            |                                  |
-| Blend Space 1D          | BS_        |            |                                  |
-| Level Sequence          | LS_        |            |                                  |
-| Morph Target            | MT_        |            |                                  |
-| Paper Flipbook          | PFB_       |            |                                  |
-| Rig                     | Rig_       |            |                                  |
-| Control Rig             | CR_        |            |                                  |
-| Skeletal Mesh           | SK_        |            |                                  |
-| Skeleton                | SKEL_      |            |                                  |
+| Asset Type          | Prefix | Suffix | Notes |
+|---------------------|--------|--------|-------|
+| Aim Offset          | AO_    |        |       |
+| Aim Offset 1D       | AO_    |        |       |
+| Animation Blueprint | ABP_   |        |       |
+| Animation Composite | AC_    |        |       |
+| Animation Montage   | AM_    |        |       |
+| Animation Sequence  | A_     |        |       |
+| Blend Space         | BS_    |        |       |
+| Blend Space 1D      | BS_    |        |       |
+| Level Sequence      | LS_    |        |       |
+| Morph Target        | MT_    |        |       |
+| Paper Flipbook      | PFB_   |        |       |
+| Rig                 | Rig_   |        |       |
+| Control Rig         | CR_    |        |       |
+| Skeletal Mesh       | SK_    |        |       |
+| Skeleton            | SKEL_  |        |       |
 
 <a name="anc-ai"></a>
 <a name="1.2.3"></a>
 ### 1.2.3 Artificial Intelligence
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| AI Controller           | AIC_       |            |                                  |
-| Behavior Tree           | BT_        |            |                                  |
-| Blackboard              | BB_        |            |                                  |
-| Decorator               | BTDecorator_ |          |                                  |
-| Service                 | BTService_ |            |                                  |
-| Task                    | BTTask_    |            |                                  |
-| Environment Query       | EQS_       |            |                                  |
-| EnvQueryContext         | EQS_       | Context    |                                  |
+| Asset Type        | Prefix       | Suffix  | Notes |
+|-------------------|--------------|---------|-------|
+| AI Controller     | AIC_         |         |       |
+| Behavior Tree     | BT_          |         |       |
+| Blackboard        | BB_          |         |       |
+| Decorator         | BTDecorator_ |         |       |
+| Service           | BTService_   |         |       |
+| Task              | BTTask_      |         |       |
+| Environment Query | EQS_         |         |       |
+| EnvQueryContext   | EQS_         | Context |       |
 
 <a name="anc-bp"></a>
 <a name="1.2.4"></a>
 ### 1.2.4 Blueprints
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Blueprint               | BP_        |            |                                  |
-| Blueprint Component	  | BP_	       | Component  | I.e. BP_InventoryComponent       |
-| Blueprint Function Library | BPFL_   |            |                                  |
-| Blueprint Interface     | BPI_       |            |                                  |
-| Blueprint Macro Library | BPML_      |            | Do not use macro libraries if possible. |
-| Enumeration             | E          |            | No underscore.                   |
-| Structure               | F or S     |            | No underscore.                   |
-| Tutorial Blueprint      | TBP_       |            |                                  |
-| Widget Blueprint        | WBP_       |            |                                  |
+| Asset Type                 | Prefix | Suffix    | Notes                                   |
+|----------------------------|--------|-----------|-----------------------------------------|
+| Blueprint                  | BP_    |           |                                         |
+| Blueprint Component	       | BP_	   | Component | I.e. BP_InventoryComponent              |
+| Blueprint Function Library | BPFL_  |           |                                         |
+| Blueprint Interface        | BPI_   |           |                                         |
+| Blueprint Macro Library    | BPML_  |           | Do not use macro libraries if possible. |
+| Enumeration                | E      |           | No underscore.                          |
+| Structure                  | F or S |           | No underscore.                          |
+| Tutorial Blueprint         | TBP_   |           |                                         |
+| Widget Blueprint           | WBP_   |           |                                         |
 
 <a name="anc-materials"></a>
 <a name="1.2.5"></a>
 ### 1.2.5 Materials
 
-| Asset Type                    | Prefix     | Suffix     | Notes                            |
-| ----------------------------- | ---------- | ---------- | -------------------------------- |
-| Material                      | M_         |            |                                  |
-| Material (Post Process)       | PP_        |            |                                  |
-| Material Function             | MF_        |            |                                  |
-| Material Instance             | MI_        |            |                                  |
-| Material Parameter Collection | MPC_       |            |                                  |
-| Subsurface Profile            | SP_        |            |                                  |
-| Physical Materials            | PM_        |            |                                  |
-| Decal                         | M_, MI_    | _Decal     |                                  |
+| Asset Type                    | Prefix  | Suffix | Notes |
+|-------------------------------|---------|--------|-------|
+| Material                      | M_      |        |       |
+| Material (Post Process)       | PP_     |        |       |
+| Material Function             | MF_     |        |       |
+| Material Instance             | MI_     |        |       |
+| Material Parameter Collection | MPC_    |        |       |
+| Subsurface Profile            | SP_     |        |       |
+| Physical Materials            | PM_     |        |       |
+| Decal                         | M_, MI_ | _Decal |       |
 
 <a name="anc-textures"></a>
 <a name="1.2.6"></a>
 ### 1.2.6 Textures
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Texture                 | T_         |            |                                  |
-| Texture (Diffuse/Albedo/Base Color)| T_ | _D      |                                  |
-| Texture (Normal)        | T_         | _N         |                                  |
-| Texture (Roughness)     | T_         | _R         |                                  |
-| Texture (Alpha/Opacity) | T_         | _A         |                                  |
-| Texture (Ambient Occlusion) | T_     | _O         |                                  |
-| Texture (Bump)          | T_         | _B         |                                  |
-| Texture (Emissive)      | T_         | _E         |                                  |
-| Texture (Mask)          | T_         | _M         |                                  |
-| Texture (Specular)      | T_         | _S         |                                  |
-| Texture (Metallic)      | T_         | _M         |                                  |
-| Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
-| Texture Cube            | TC_        |            |                                  |
-| Media Texture           | MT_        |            |                                  |
-| Render Target           | RT_        |            |                                  |
-| Cube Render Target      | RTC_       |            |                                  |
-| Texture Light Profile   | TLP        |            |                                  |
+| Asset Type                          | Prefix | Suffix | Notes                                                   |
+|-------------------------------------|--------|--------|---------------------------------------------------------|
+| Texture                             | T_     |        |                                                         |
+| Texture (Diffuse/Albedo/Base Color) | T_     | _D     |                                                         |
+| Texture (Normal)                    | T_     | _N     |                                                         |
+| Texture (Roughness)                 | T_     | _R     |                                                         |
+| Texture (Alpha/Opacity)             | T_     | _A     |                                                         |
+| Texture (Ambient Occlusion)         | T_     | _O     |                                                         |
+| Texture (Bump)                      | T_     | _B     |                                                         |
+| Texture (Emissive)                  | T_     | _E     |                                                         |
+| Texture (Mask)                      | T_     | _M     |                                                         |
+| Texture (Specular)                  | T_     | _S     |                                                         |
+| Texture (Metallic)                  | T_     | _M     |                                                         |
+| Texture (Packed)                    | T_     | _*     | See notes below about [packing](#anc-textures-packing). |
+| Texture Cube                        | TC_    |        |                                                         |
+| Media Texture                       | MT_    |        |                                                         |
+| Render Target                       | RT_    |        |                                                         |
+| Cube Render Target                  | RTC_   |        |                                                         |
+| Texture Light Profile               | TLP    |        |                                                         |
 
 <a name="anc-textures-packing"></a>
 <a name="1.2.6.1"></a>
@@ -371,88 +334,101 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 <a name="1.2.7"></a>
 ### 1.2.7 Miscellaneous
 
-| Asset Type                 | Prefix     | Suffix     | Notes                            |
-| -------------------------- | ---------- | ---------- | -------------------------------- |
-| Animated Vector Field      | VFA_       |            |                                  |
-| Camera Anim                | CA_        |            |                                  |
-| Color Curve                | Curve_     | _Color     |                                  |
-| Curve Table                | Curve_     | _Table     |                                  |
-| Data Asset                 | *_         |            | Prefix should be based on class. |
-| Data Table                 | DT_        |            |                                  |
-| Float Curve                | Curve_     | _Float     |                                  |
-| Foliage Type               | FT_        |            |                                  |
-| Force Feedback Effect      | FFE_       |            |                                  |
-| Landscape Grass Type       | LG_        |            |                                  |
-| Landscape Layer            | LL_        |            |                                  |
-| Matinee Data               | Matinee_   |            |                                  |
-| Media Player               | MP_        |            |                                  |
-| Object Library             | OL_        |            |                                  |
-| Redirector                 |            |            | These should be fixed up ASAP.   |
-| Sprite Sheet               | SS_        |            |                                  |
-| Static Vector Field        | VF_        |            |                                  |
-| Substance Graph Instance   | SGI_       |            |                                  |
-| Substance Instance Factory | SIF_       |            |                                  |
-| Touch Interface Setup      | TI_        |            |                                  |
-| Vector Curve               | Curve_     | _Vector    |                                  |
-
-<a name="anc-paper2d"></a>
-<a name="1.2.8"></a>
-### 1.2.8 Paper 2D
-
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Paper Flipbook          | PFB_       |            |                                  |
-| Sprite                  | SPR_       |            |                                  |
-| Sprite Atlas Group      | SPRG_      |            |                                  |
-| Tile Map                | TM_        |            |                                  |
-| Tile Set                | TS_        |            |                                  |
+| Asset Type                 | Prefix   | Suffix  | Notes                            |
+|----------------------------|----------|---------|----------------------------------|
+| Animated Vector Field      | VFA_     |         |                                  |
+| Camera Anim                | CA_      |         |                                  |
+| Color Curve                | Curve_   | _Color  |                                  |
+| Curve Table                | Curve_   | _Table  |                                  |
+| Data Asset                 | *_       |         | Prefix should be based on class. |
+| Data Table                 | DT_      |         |                                  |
+| Float Curve                | Curve_   | _Float  |                                  |
+| Foliage Type               | FT_      |         |                                  |
+| Force Feedback Effect      | FFE_     |         |                                  |
+| Landscape Grass Type       | LG_      |         |                                  |
+| Landscape Layer            | LL_      |         |                                  |
+| Matinee Data               | Matinee_ |         |                                  |
+| Media Player               | MP_      |         |                                  |
+| Object Library             | OL_      |         |                                  |
+| Redirector                 |          |         | These should be fixed up ASAP.   |
+| Sprite Sheet               | SS_      |         |                                  |
+| Static Vector Field        | VF_      |         |                                  |
+| Substance Graph Instance   | SGI_     |         |                                  |
+| Substance Instance Factory | SIF_     |         |                                  |
+| Touch Interface Setup      | TI_      |         |                                  |
+| Vector Curve               | Curve_   | _Vector |                                  |
 
 <a name="anc-physics"></a>
-<a name="1.2.9"></a>
+<a name="1.2.8"></a>
+### 1.2.8 Lyra Types
+
+| Asset Type                        | Prefix | Suffix         | Notes |
+|-----------------------------------|--------|----------------|-------|
+| Game Data Asset                   | D_     | GameData       |       |
+| Experience Definition             | EX_    |                |       |
+| User-Facing Experience Definition | UEX_   |                |       |
+| Experience Action Set             | EAS_   |                |       |
+| Pawn Data                         | PD_    |                |       |
+| Input Config                      | IC_    |                |       |
+| Ability Set                       | AS_    |                |       |
+| Aim Sensitivity Data Asset        | D_     | AimSensitivity |       |
+| Ability Tag Relationship Mapping  | TRM_   |                |       |
+
+<a name="anc-physics"></a>
+<a name="1.2.8"></a>
 ### 1.2.9 Physics
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Physical Material       | PM_        |            |                                  |
-| Physics Asset	          | PHYS_      |            |                                  |
-| Destructible Mesh       | DM_        |            |                                  |
+| Asset Type        | Prefix | Suffix | Notes |
+|-------------------|--------|--------|-------|
+| Physical Material | PM_    |        |       |
+| Physics Asset     | PHYS_  |        |       |
+| Destructible Mesh | DM_    |        |       |
 
 <a name="anc-sounds"></a>
 <a name="1.2.10"></a>
 ### 1.2.10 Sounds
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Dialogue Voice          | DV_        |            |                                  |
-| Dialogue Wave           | DW_        |            |                                  |
-| Media Sound Wave        | MSW_       |            |                                  |
-| Reverb Effect           | Reverb_    |            |                                  |
-| Sound Attenuation       | ATT_       |            |                                  |
-| Sound Class             |            |            | No prefix/suffix. Should be put in a folder called SoundClasses |
-| Sound Concurrency       |            | _SC        | Should be named after a SoundClass |
-| Sound Cue               | A_         | _Cue       |                                  |
-| Sound Mix               | Mix_       |            |                                  |
-| Sound Wave              | A_         |            |                                  |
+| Asset Type        | Prefix  | Suffix | Notes                                                           |
+|-------------------|---------|--------|-----------------------------------------------------------------|
+| Dialogue Voice    | DV_     |        |                                                                 |
+| Dialogue Wave     | DW_     |        |                                                                 |
+| Media Sound Wave  | MSW_    |        |                                                                 |
+| Reverb Effect     | Reverb_ |        |                                                                 |
+| Sound Attenuation | ATT_    |        |                                                                 |
+| Sound Class       |         |        | No prefix/suffix. Should be put in a folder called SoundClasses |
+| Sound Concurrency |         | _SC    | Should be named after a SoundClass                              |
+| Sound Cue         | A_      | _Cue   |                                                                 |
+| Sound Mix         | Mix_    |        |                                                                 |
+| Sound Wave        | A_      |        |                                                                 |
 
 <a name="anc-ui"></a>
 <a name="1.2.11"></a>
 ### 1.2.11 User Interface
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Font                    | Font_      |            |                                  |
-| Slate Brush             | Brush_     |            |                                  |
-| Slate Widget Style      | Style_     |            |                                  |
-| Widget Blueprint        | WBP_       |            |                                  |
+| Asset Type         | Prefix | Suffix | Notes |
+|--------------------|--------|--------|-------|
+| Font               | Font_  |        |       |
+| Slate Brush        | Brush_ |        |       |
+| Slate Widget Style | Style_ |        |       |
+| Widget Blueprint   | WBP_   |        |       |
 
 <a name="anc-effects"></a>
 <a name="1.2.12"></a>
 ### 1.2.12 Effects
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Particle System         | PS_        |            |                                  |
-| Material (Post Process) | PP_        |            |                                  |
+| Asset Type              | Prefix | Suffix | Notes |
+|-------------------------|--------|--------|-------|
+| Particle System         | PS_    |        |       |
+| Material (Post Process) | PP_    |        |       |
+
+<a name="anc-input"></a>
+<a name="1.2.12"></a>
+### 1.2.13 Enhanced Input
+
+| Asset Type            | Prefix | Suffix | Notes |
+|-----------------------|--------|--------|-------|
+| Input Action          | IA_    |        |       |
+| Input Mapping Context | IMC_   |        |       |
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -463,7 +439,7 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 
 Equally important as asset names, the directory structure style of a project should be considered law. Asset naming conventions and content directory structure go hand in hand, and a violation of either causes unneeded chaos.
 
-There are multiple ways to lay out the content of a UE4 project. In this style, we will be using a structure that relies more on filtering and search abilities of the Content Browser for those working with assets to find assets of a specific type instead of another common structure that groups asset types with folders.
+There are multiple ways to lay out the content of a UE5 project. In this style, we will be using a structure that relies more on filtering and search abilities of the Content Browser for those working with assets to find assets of a specific type instead of another common structure that groups asset types with folders.
 
 > If you are using the prefix [naming convention](#1.2) above, using folders to contain assets of similar types such as `Meshes`, `Textures`, and `Materials` is a redundant practice as asset types are already both sorted by prefix as well as able to be filtered in the content browser.
 
@@ -471,7 +447,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 ### 2e1 Example Project Content Structure
 <pre>
 |-- Content
-    |-- <a href="#2.2">GenericShooter</a>
+    |-- <a href="#2.2">SingularityDirective</a>
         |-- Art
         |   |-- Industrial
         |   |   |-- Ambient
@@ -563,7 +539,7 @@ Re-enforcing [2.1.1](#2.1.1), never use spaces. Spaces can cause various enginee
 <a name="2.1.3"></a>
 #### 2.1.3 Never Use Unicode Characters And Other Symbols
 
-If one of your game characters is named 'Zoë', its folder name should be `Zoe`. Unicode characters can be worse than [Spaces](#2.1.2) for engineering tool and some parts of UE4 don't support Unicode characters in paths either.
+If one of your game characters is named 'Zoë', its folder name should be `Zoe`. Unicode characters can be worse than [Spaces](#2.1.2) for engineering tool and some parts of UE5 don't support Unicode characters in paths either.
 
 Related to this, if your project has [unexplained issues](https://answers.unrealengine.com/questions/101207/undefined.html) and your computer's user name has a Unicode character (i.e. your name is `Zoë`), any project located in your `My Documents` folder will suffer from this issue. Often simply moving your project to something like `D:\Project` will fix these mysterious issues.
 
@@ -804,7 +780,7 @@ All booleans should be named in PascalCase but prefixed with a lowercase `b`.
 
 Example: Use `bDead` and `bEvil`, **not** `Dead` and `Evil`.
 
-UE4 Blueprint editors know not to include the `b` in user-friendly displays of the variable.
+UE5 Blueprint editors know not to include the `b` in user-friendly displays of the variable.
 
 <a name="3.2.1.4"></a>
 <a name="bp-var-bool-names"></a>
@@ -1334,8 +1310,6 @@ This section will focus on Level assets and their internals.
 
 > 6.3 [No Player Visible Z Fighting](#evels-no-visible-z-fighting)
 
-> 6.4 [Marketplace Specific Rules](#evels-levels-mp-rules)
-
 <a name="6.1"></a>
 <a name="levels-no-errors-or-warnings"></a>
 ### 6.1 No Errors Or Warnings
@@ -1357,32 +1331,6 @@ It is normal during development for levels to occasionally not have lighting bui
 ### 6.3 No Player Visible Z Fighting
 
 Levels should not have any [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) in all areas visible to the player. 
-
-<a name="6.4"></a>
-<a name="levels-mp-rules"></a>
-### 6.4 Marketplace Specific Rules
-
-If a project is to be sold on the UE4 Marketplace, it must follow these rules.
-
-<a name="6.4.1"></a>
-<a name="levels-mp-rules-overview"></a>
-### 6.4.1 Overview Level
-
-If your project contains assets that should be visualized or demoed, you must have a map within your project that contains the name "Overview".
-
-This overview map, if it is visualizing assets, should be set up according to [Epic's guidelines](http://help.epicgames.com/customer/en/portal/articles/2592186-marketplace-submission-guidelines-preparing-your-assets#Required%20Levels%20and%20Maps).
-
-For example, `InteractionComponent_Overview`.
-
-<a name="6.4.2"></a>
-<a name="levels-mp-rules-demo"></a>
-### 6.4.2 Demo Level
-
-If your project contains assets that should be demoed or come with some sort of tutorial, you must have a map within your project that contains the name "Demo". This level should also contain documentation within it in some form that illustrates how to use your project. See Epic's Content Examples project for good examples on how to do this.
-
-If your project is a gameplay mechanic or other form of system as opposed to an art pack, this can be the same as your "Overview" map.
-
-For example, `InteractionComponent_Overview_Demo`, `ExplosionKit_Demo`.
 
 **[⬆ Back to Top](#table-of-contents)**
 
