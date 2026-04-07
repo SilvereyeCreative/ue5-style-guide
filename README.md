@@ -169,9 +169,9 @@ Depending on how your asset variants are made, you can chain together variant na
 
 | Asset Type              | Asset Name                                                 |
 | ----------------------- | ---------------------------------------------------------- |
-| Static Mesh (01)        | S_Rock_01                                                  |
-| Static Mesh (02)        | S_Rock_02                                                  |
-| Static Mesh (03)        | S_Rock_03                                                  |
+| Static Mesh (01)        | SM_Rock_01                                                  |
+| Static Mesh (02)        | SM_Rock_02                                                  |
+| Static Mesh (03)        | SM_Rock_03                                                  |
 | Material                | M_Rock                                                     |
 | Material Instance (Snow)| MI_Rock_Snow                                               |
 
@@ -216,17 +216,11 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Asset Type         | Prefix | Suffix    | Notes                                      |
 |--------------------|--------|-----------|--------------------------------------------|
 | Level / Map        |        |           | [Should be in a folder called Maps.](#2.4) |
-| Level (Persistent) |        | _P        |                                            |
-| Level (Audio)      |        | _Audio    |                                            |
-| Level (Lighting)   |        | _Lighting |                                            |
-| Level (Geometry)   |        | _Geo      |                                            |
-| Level (Gameplay)   |        | _Gameplay |                                            |
 | Blueprint          | BP_    |           |                                            |
 | Material           | M_     |           |                                            |
 | Static Mesh        | SM_    |           |                                            |
 | Skeletal Mesh      | SK_    |           |                                            |
 | Texture            | T_     | _?        | See [Textures](#anc-textures)              |
-| Particle System    | PS_    |           |                                            |
 | Widget Blueprint   | WBP_   |           |                                            |
 
 <a name="anc-animations"></a>
@@ -245,7 +239,6 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Blend Space 1D      | BS_    |        |       |
 | Level Sequence      | LS_    |        |       |
 | Morph Target        | MT_    |        |       |
-| Paper Flipbook      | PFB_   |        |       |
 | Rig                 | Rig_   |        |       |
 | Control Rig         | CR_    |        |       |
 | Skeletal Mesh       | SK_    |        |       |
@@ -273,7 +266,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Asset Type                 | Prefix | Suffix    | Notes                                   |
 |----------------------------|--------|-----------|-----------------------------------------|
 | Blueprint                  | BP_    |           |                                         |
-| Blueprint Component	       | BP_	   | Component | I.e. BP_InventoryComponent              |
+| Blueprint Component	     | BP_	  | Component | I.e. BP_InventoryComponent              |
 | Blueprint Function Library | BPFL_  |           |                                         |
 | Blueprint Interface        | BPI_   |           |                                         |
 | Blueprint Macro Library    | BPML_  |           | Do not use macro libraries if possible. |
@@ -309,7 +302,6 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Texture (Roughness)                 | T_     | _R     |                                                         |
 | Texture (Alpha/Opacity)             | T_     | _A     |                                                         |
 | Texture (Ambient Occlusion)         | T_     | _O     |                                                         |
-| Texture (Bump)                      | T_     | _B     |                                                         |
 | Texture (Emissive)                  | T_     | _E     |                                                         |
 | Texture (Mask)                      | T_     | _M     |                                                         |
 | Texture (Specular)                  | T_     | _S     |                                                         |
@@ -337,17 +329,16 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Asset Type                 | Prefix   | Suffix  | Notes                            |
 |----------------------------|----------|---------|----------------------------------|
 | Animated Vector Field      | VFA_     |         |                                  |
-| Camera Anim                | CA_      |         |                                  |
-| Color Curve                | Curve_   | _Color  |                                  |
-| Curve Table                | Curve_   | _Table  |                                  |
+| Float Curve                | CV_      | _Float  |                                  |
+| Vector Curve               | CV_      | _Vector |                                  |
+| Color Curve                | CV_      | _Color  |                                  |
+| Curve Table                | CV_      | _Table  |                                  |
 | Data Asset                 | *_       |         | Prefix should be based on class. |
 | Data Table                 | DT_      |         |                                  |
-| Float Curve                | Curve_   | _Float  |                                  |
 | Foliage Type               | FT_      |         |                                  |
 | Force Feedback Effect      | FFE_     |         |                                  |
 | Landscape Grass Type       | LG_      |         |                                  |
 | Landscape Layer            | LL_      |         |                                  |
-| Matinee Data               | Matinee_ |         |                                  |
 | Media Player               | MP_      |         |                                  |
 | Object Library             | OL_      |         |                                  |
 | Redirector                 |          |         | These should be fixed up ASAP.   |
@@ -356,7 +347,6 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Substance Graph Instance   | SGI_     |         |                                  |
 | Substance Instance Factory | SIF_     |         |                                  |
 | Touch Interface Setup      | TI_      |         |                                  |
-| Vector Curve               | Curve_   | _Vector |                                  |
 
 <a name="anc-physics"></a>
 <a name="1.2.8"></a>
@@ -371,7 +361,7 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Pawn Data                         | PD_    |                |       |
 | Input Config                      | IC_    |                |       |
 | Ability Set                       | AS_    |                |       |
-| Aim Sensitivity Data Asset        | D_     | AimSensitivity |       |
+| Aim Sensitivity Data              | D_     | AimSensitivity |       |
 | Ability Tag Relationship Mapping  | TRM_   |                |       |
 
 <a name="anc-physics"></a>
